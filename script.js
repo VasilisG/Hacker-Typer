@@ -13,7 +13,6 @@ function getFileContents() {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status === 0) {
                 sourceCode = rawFile.responseText;
-                //console.log(sourceCode);
             }
         }
     };
@@ -35,7 +34,6 @@ function init() {
 function updateCursor() {
     var text = sourceElement.textContent;
     var lastChar = text.charAt(text.length-1);
-    //console.log("Last character: " + lastChar);
     if (lastChar === cursorChar) {
         sourceElement.textContent = text.substring(0,text.length-1);
     }
@@ -54,7 +52,6 @@ function updateScrollPosition() {
 }
 
 function update() {
-    //console.log("Updating...");
     updateScreen();
     updateScrollPosition();
 }
@@ -65,6 +62,3 @@ function run() {
 }
 
 run();
-
-//window.onload = init;
-//window.onkeydown = update;

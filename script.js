@@ -13,6 +13,7 @@ function getFileContents() {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status === 0) {
                 sourceCode = rawFile.responseText;
+                console.log(sourceCode);
             }
         }
     };
@@ -59,6 +60,7 @@ function update() {
 function run() {
     window.onload = init;
     window.onkeydown = update;
+    window.ontouchstart = update;
 }
 
 run();
